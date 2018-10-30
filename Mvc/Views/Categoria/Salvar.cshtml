@@ -1,5 +1,10 @@
+@model Dominio.Entidades.Categoria
+
 <h2>Formulário Categoria</h2>
 
-<form>
-    
+<form asp-action="Salvar" asp-controller="Categoria" method="POST">
+    <label for="Nome">Nome:</label>
+    <input asp-for="Nome" type="text" />
+    <br />
+    <button type="submit">Salvar</button>
 </form>
