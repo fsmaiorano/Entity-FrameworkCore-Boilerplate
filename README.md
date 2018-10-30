@@ -1,6 +1,6 @@
 ## Entity FrameworkCore Boilerplate
 
-A simple quickstart boilerplate for Entity Framework Core.
+:computer: A simple quickstart boilerplate for Entity Framework Core.
 
 for run:
 
@@ -16,4 +16,4 @@ $ dotnet build
 $ dotnet run
 ```
 
-You can find some tips in the [Wiki](https://github.com/fsmaiorano/entity-frameworkcore-boilerplate/wiki).
+:fire: You can find some tips in the [Wiki](https://github.com/fsmaiorano/entity-frameworkcore-boilerplate/wiki).
