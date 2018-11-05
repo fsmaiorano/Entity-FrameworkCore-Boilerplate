@@ -22,6 +22,12 @@ namespace Mvc.Controllers
             return View(categorias);
         }
 
+        public IActionResult Editar(int id)
+        {
+            var categoria = _contexto.Categorias.FirstOrDefault(x => x.Id == id);
+            return View("Salvar", categoria);
+        }
+
         [HttpGet]
         public IActionResult Salvar()
         {
@@ -31,7 +37,16 @@ namespace Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Salvar(Categoria categoria)
         {
-            _contexto.Categorias.Add(categoria);
+            if (categoria.Id == 0)
+            {
+                _contexto.Categorias.Add(categoria);
+            }
+            else
+            {
+                var categoriaSelecionada = _contexto.Categorias.FirstOrDefault(x => x.Id == categoria.Id);
+                categoriaSelecionada.Nome = categoria.Nome;
+            }
+
             await _contexto.SaveChangesAsync();
             return RedirectToAction("Index");
         }

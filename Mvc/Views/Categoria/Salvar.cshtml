@@ -3,8 +3,9 @@
 <h2>Formulário Categoria</h2>
 
 <form asp-action="Salvar" asp-controller="Categoria" method="POST">
+    <input type="hidden" asp-for="Id" />
     <label for="Nome">Nome:</label>
     <input asp-for="Nome" type="text" />
     <br />
     <button type="submit">Salvar</button>
-</form>
+</form> 
