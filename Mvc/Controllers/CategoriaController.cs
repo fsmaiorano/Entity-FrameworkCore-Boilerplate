@@ -28,6 +28,14 @@ namespace Mvc.Controllers
             return View("Salvar", categoria);
         }
 
+        public async Task<IActionResult> Deletar(int id)
+        {
+            var categoria = _contexto.Categorias.FirstOrDefault(x => x.Id == id);
+            _contexto.Categorias.Remove(categoria);
+            await _contexto.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public IActionResult Salvar()
         {
