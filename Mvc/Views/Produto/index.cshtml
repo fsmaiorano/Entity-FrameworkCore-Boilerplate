@@ -1,0 +1,14 @@
+@model Dominio.Entidades.Produto
+<h1>Produto</h1>
+
+<form asp-action="Salvar" asp-controller="Produto" method="POST">
+    <label for="Nome" >Nome</label>
+    <input type="text" asp-for="Nome" />
+
+    <label for="Categoria">Categoria</label>
+    <select asp-for="Categoria" asp-items='@(new SelectList(@ViewBag.Categorias, "Id", "Nome"))'> 
+        
+    </select>
+    
+   <button type="submit">Salvar</button> 
+</form>
